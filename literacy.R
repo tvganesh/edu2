@@ -9,7 +9,7 @@ library(RColorBrewer)
 
 #a <- read.csv("india.csv")
 
-educationalLevels <- function(df,peopleType,region,state,status) {
+educationalLevels2 <- function(df,peopleType,region,state,status) {
     #educationalLevels(a,input$type,input$region, input$state,input$status)
     #df <-a
     ##region<-"Total"
@@ -95,7 +95,7 @@ educationalLevels <- function(df,peopleType,region,state,status) {
 #
 ###############################################################################################
 
-bar <- function(df,peopleType,type,state,literacyLevel) {
+bar1 <- function(df,peopleType,type,state,literacyLevel) {
     dim(df)
     print(peopleType)
     print(type)
@@ -207,7 +207,7 @@ bar <- function(df,peopleType,type,state,literacyLevel) {
 }
 
 #########################################################################################
-allPercent <- function(df,region,state, literacyLevel) {
+allPercent1 <- function(df,region,state, literacyLevel) {
     #df =a
     #type="Rural"
     #state="INDIA"
@@ -276,7 +276,7 @@ allPercent <- function(df,region,state, literacyLevel) {
 
 ##############################################
 
-districtEdu <- function(state,peopleType,eduInst){
+districtEdu1 <- function(state,peopleType,eduInst){
     #state <-"BIHAR"
     #peopleType="Persons"
     #eduInst ="Schools"

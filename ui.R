@@ -4,7 +4,7 @@
 # Designed and developed by: Tinniam V Ganesh
 # Date : 5 Nov 2015
 # File: ui.R
-# 
+# More details: https://gigadom.wordpress.com/
 #
 #########################################################################################################
 library(shiny)

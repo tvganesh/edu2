@@ -15,14 +15,14 @@ library(ggplot2)
 library(dplyr)
 library(stringr)
 
-#source("./literacy.R", local=TRUE)
+
 source("./eduLevels.R", local=TRUE)
 source("./stateLiteracy.R", local=TRUE)
 source("./districtLiteracy.R", local=TRUE)
 source("./indiaLiteracy.R", local=TRUE)
+
 # Load the data
 load(file="education.RData")
-
 
 colnames(a) <- gsub("Educational.level...","",colnames(a))
 
@@ -37,7 +37,6 @@ states <- unique(a$Area.Name)
 
 # Load the fortified INDIa shapefile
 load(file="./INDIA_SHP/ind.RData")
-
 
 shinyServer(function(input, output,session) {
     
@@ -63,18 +62,13 @@ shinyServer(function(input, output,session) {
     updateSelectizeInput(session, 'state', choices = states, server = TRUE,selected="INDIA")
     toggle("inputBox")
     toggle("state")
-    output$distPlot <- renderPlot({  
-        
-        
-        educationalLevels(a,input$type,input$region, input$state,input$status)
-        
-        
+    output$distPlot <- renderPlot({        
+        educationalLevels(a,input$type,input$region, input$state,input$status)    
     })
     
     # 3. India literacy plot
     # Draw the India Literacy plot
-    output$indiaLiteracy <- renderPlot({  
-        
+    output$indiaLiteracy <- renderPlot({         
         indiaLiteracy(input$region2,input$type2,input$literacyLevel)
     })
     
@@ -86,8 +80,7 @@ shinyServer(function(input, output,session) {
     updateSelectizeInput(session, 'state2', choices = updatedStates, server = TRUE,selected="KARNATAKA")
     toggle("inputBox2")
     toggle("state2")
-    output$districtPlot <- renderPlot({  
-        
+    output$districtPlot <- renderPlot({          
         districtEdu(input$state2,input$type3,input$literacy3)
     })
     
